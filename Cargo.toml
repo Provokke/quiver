@@ -1,0 +1,18 @@
+[package]
+name = "quiver"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+memmap2 = "0.9"
+bumpalo = { version = "3", features = ["collections"] }
+rayon = "1"
+ignore = "0.4"
+
+[dev-dependencies]
+proptest = "1"
+
+[profile.release]
+lto = "thin"
+codegen-units = 4
+debug = false
