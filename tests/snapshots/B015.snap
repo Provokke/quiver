@@ -1,0 +1,1 @@
+2:1 B015 Pointless comparison. Did you mean to assign a value? Otherwise, prepend `assert` or remove it.

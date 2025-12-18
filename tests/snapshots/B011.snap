@@ -1,0 +1,6 @@
+1:8 B011 Do not `assert False`, raise `AssertionError()` [*]
+2:8 B011 Do not `assert False`, raise `AssertionError()` [*]
+--- fixed (2 fixes) ---
+raise AssertionError()  # ERR
+raise AssertionError("message")  # ERR
+assert True
