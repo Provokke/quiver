@@ -1,0 +1,4 @@
+1:6 E703 Statement ends with an unnecessary semicolon [*]
+--- fixed (1 fixes) ---
+x = 1  # ERR
+y = 2
