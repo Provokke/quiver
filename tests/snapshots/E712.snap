@@ -1,0 +1,2 @@
+2:9 E712 Avoid equality comparisons to `True`
+4:9 E712 Avoid equality comparisons to `False`

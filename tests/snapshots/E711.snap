@@ -1,0 +1,10 @@
+2:9 E711 Comparison to `None` should be `cond is None` [*]
+4:4 E711 Comparison to `None` should be `cond is not None` [*]
+--- fixed (2 fixes) ---
+x = 1
+if x is None:  # ERR
+    pass
+if None is not x:  # ERR
+    pass
+if x is None:
+    pass
