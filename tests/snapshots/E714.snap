@@ -1,0 +1,7 @@
+2:4 E714 Test for object identity should be `is not` [*]
+--- fixed (1 fixes) ---
+x, y = 1, 2
+if x is not y:  # ERR
+    pass
+if x is not y:
+    pass
