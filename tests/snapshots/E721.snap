@@ -1,0 +1,1 @@
+2:4 E721 Use `is` and `is not` for type comparisons, or `isinstance()` for isinstance checks
