@@ -1,0 +1,16 @@
+1:8 F401 `os` imported but unused [*]
+3:8 F401 `os.path` imported but unused [*]
+4:20 F401 `typing.List` imported but unused [*]
+4:26 F401 `typing.Dict` imported but unused [*]
+5:25 F401 `collections.OrderedDict as OD` imported but unused [*]
+13:12 F401 `re` imported but unused [*]
+--- fixed (5 fixes) ---
+import sys
+import json as json
+from __future__ import annotations
+
+print(sys.argv)
+
+
+def f():
+    return 1
