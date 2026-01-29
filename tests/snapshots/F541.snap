@@ -1,0 +1,9 @@
+2:5 F541 f-string without any placeholders [*]
+5:5 F541 f-string without any placeholders
+--- fixed (1 fixes) ---
+x = 1
+a = "no placeholders"  # ERR
+b = f"has {x}"
+c = "plain"
+d = f"{{escaped}}"  # ERR
+e = f"a" f"b{x}"
