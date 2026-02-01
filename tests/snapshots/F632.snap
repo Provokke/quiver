@@ -1,0 +1,10 @@
+2:4 F632 Use `==` to compare constant literals [*]
+4:4 F632 Use `==` to compare constant literals [*]
+--- fixed (2 fixes) ---
+x = 1
+if x == "str":  # ERR
+    pass
+if x == 1:  # ERR
+    pass
+if x is None:
+    pass
