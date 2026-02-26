@@ -1,0 +1,3 @@
+5:12 F821 Undefined name `undefined_name`
+20:16 F821 Undefined name `attr`
+28:1 F821 Undefined name `x`
