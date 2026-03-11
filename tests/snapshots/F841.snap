@@ -1,0 +1,2 @@
+2:5 F841 Local variable `unused` is assigned to but never used
+12:25 F841 Local variable `e` is assigned to but never used
