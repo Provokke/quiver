@@ -1,0 +1,13 @@
+2:11 F901 `raise NotImplemented` should be `raise NotImplementedError` [*]
+6:11 F901 `raise NotImplemented` should be `raise NotImplementedError` [*]
+--- fixed (2 fixes) ---
+def f():
+    raise NotImplementedError  # ERR
+
+
+def g():
+    raise NotImplementedError("x")  # ERR
+
+
+def h():
+    raise NotImplementedError
