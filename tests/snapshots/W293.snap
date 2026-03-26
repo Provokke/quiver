@@ -1,0 +1,5 @@
+2:1 W293 Blank line contains whitespace [*]
+--- fixed (1 fixes) ---
+x = 1
+
+y = 2
