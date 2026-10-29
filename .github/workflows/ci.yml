@@ -1,0 +1,26 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install pyflakes pycodestyle
+      - run: cargo fmt --check
+      - run: cargo clippy --all-targets -- -D warnings
+      - run: cargo test --workspace
+      - run: cargo build --release
+      - name: Parse the whole stdlib
+        run: ./target/release/quiver parse-stats "$(python3 -c 'import sysconfig;print(sysconfig.get_paths()["stdlib"])')"
+      - name: Formatter round-trip on the stdlib
+        run: ./target/release/quiver verify-format "$(python3 -c 'import sysconfig;print(sysconfig.get_paths()["stdlib"])')"
+      - name: Formatter vs CPython ast
+        run: python3 scripts/verify_format_with_python_ast.py target/release/quiver "$(python3 -c 'import sysconfig;print(sysconfig.get_paths()["stdlib"])')" 600
+      - name: Differential vs pyflakes/pycodestyle (informational)
+        run: python3 scripts/differential.py target/release/quiver "$(python3 -c 'import sysconfig;print(sysconfig.get_paths()["stdlib"])')"
